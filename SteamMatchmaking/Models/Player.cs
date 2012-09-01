@@ -11,7 +11,8 @@ namespace SteamMatchmaking.Models
         public string RealName { get; set; }
         public virtual ICollection<Player> Friends { get; set; }
         public virtual ICollection<Game> Games { get; set; }
-        public virtual ICollection<PlayerRank> Matches { get; set; }
+        public virtual ICollection<PlayerIndex> PlayerIndices { get; set; }
+        public virtual ICollection<GameIndex> GameIndices { get; set; }
 
         public Player()
         {

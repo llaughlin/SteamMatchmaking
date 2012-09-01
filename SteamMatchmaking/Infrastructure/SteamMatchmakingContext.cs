@@ -7,7 +7,7 @@ namespace SteamMatchmaking.Infrastructure
     {
         public DbSet<Player> Players { get; set; }
         public DbSet<Game> Games { get; set; }
-        public DbSet<PlayerRank> Rankings { get; set; }
+        public DbSet<PlayerIndex> Rankings { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

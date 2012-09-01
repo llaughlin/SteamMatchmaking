@@ -68,8 +68,9 @@
     <Compile Include="Infrastructure\SteamMatchmakingContext.cs" />
     <Compile Include="Infrastructure\SteamMatchmakingContextInitializer.cs" />
     <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GameIndex.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\PlayerRank.cs" />
+    <Compile Include="Models\PlayerIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SteamUserService.cs" />
   </ItemGroup>
