@@ -1,0 +1,12 @@
+syntax: glob
+
+*suo
+*.exe
+bin*
+obj*
+*csproj.vs10x
+TestResults*
+_ReSharper*
+*.user
+*.bak
+packages*

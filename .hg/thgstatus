@@ -1,0 +1,13 @@
+m
+rSteamMatchmaking
+mSteamMatchmaking/Infrastructure
+mSteamMatchmaking/Models
+rSteamMatchmaking/Properties
+rSteamMatchmaking/Support/Extensions
+rSteamMatchmakingWPF
+rSteamMatchmakingWPF/Infrastructure
+rSteamMatchmakingWPF/Models
+rSteamMatchmakingWPF/Properties
+rSteamMatchmakingWPF/Support/Extensions
+rtest
+rtest/Properties
