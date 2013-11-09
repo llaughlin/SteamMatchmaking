@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.XPath;
-using CustomExtensions;
+using SteamMatchmaking.Extensions;
 using SteamMatchmaking.Models;
 
 namespace SteamMatchmaking
@@ -161,6 +161,4 @@ namespace SteamMatchmaking
         public event Action<long, Player> OnCalculatePlayerMetric;
         public event Action<long, long, int, Player, Game> OnCalculateGameMetric;
     }
-
-
 }
