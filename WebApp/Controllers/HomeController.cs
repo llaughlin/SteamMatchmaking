@@ -20,6 +20,14 @@ namespace WebApp.Controllers
 
         public ActionResult Process()
         {
+
+            var steamService = new SteamUserService(MongoSteamMatchmaking.Database);
+
+            return Json(true);
+        }
+
+        public ActionResult ProcessOld()
+        {
             Console.WriteLine("Starting up...");
             Database.SetInitializer(new SteamMatchmakingContextInitializer());
             var context = new SteamMatchmakingContext();

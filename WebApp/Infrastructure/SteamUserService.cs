@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.XPath;
+using MongoDB.Driver;
 using SteamMatchmaking.Extensions;
 using WebApp.Controllers;
 using WebApp.Models;
@@ -13,12 +14,19 @@ namespace WebApp.Infrastructure
 {
     public class SteamUserService
     {
+        public SteamUserService(){}
         public SteamUserService(SteamMatchmakingContext context)
         {
             Context = context;
         }
 
+        public SteamUserService(MongoDatabase database)
+        {
+            Database = database;
+        }
+
         protected SteamMatchmakingContext Context { get; set; }
+        protected MongoDatabase Database { get; set; }
 
         public const string FriendListQuery = "http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key={0}&steamid={1}&relationship=friend&format=xml";
         public const string PlayerSummariesQuery = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={0}&steamids={1}&format=xml";
@@ -130,6 +138,42 @@ namespace WebApp.Infrastructure
                 i++;
             }
         }
+
+        //public void CalculatePlayerMetrics(List<Player> source)
+        //{
+        //    var i = 0;
+        //    foreach (var thisPlayer in source)
+        //    {
+        //        var otherPlayers = source.Where(p => p.Id != thisPlayer.Id).ToList();
+        //        var games = thisPlayer.Games.ToList();
+
+        //        foreach (var otherPlayer in otherPlayers)
+        //        {
+        //            var existingPlayerIndex = Database.Rankings.FirstOrDefault(r => r.Player1.Id == thisPlayer.Id && r.Player2.Id == otherPlayer.Id)
+        //                                ?? new PlayerIndex() { Player1 = thisPlayer, Player2 = otherPlayer };
+
+        //            var j = 0;
+        //            foreach (var thisPlayersGame in games)
+        //            {
+        //                var matchingOtherPlayersGame = otherPlayer.Games.FirstOrDefault(g => g.GameId == thisPlayersGame.GameId);
+        //                if (matchingOtherPlayersGame == null)
+        //                {
+        //                    // other player doesn't own this game
+        //                    j++;
+        //                    continue;
+        //                }
+        //                var existingGameIndex = existingPlayerIndex.GameIndexes.FirstOrDefault(gi => gi.GameId == thisPlayersGame.GameId)
+        //                                        ?? new GameIndex() { GameId = thisPlayersGame.GameId };
+        //                existingGameIndex.Playtime1 = thisPlayersGame.TotalHoursPlayed;
+        //                existingGameIndex.Playtime2 = matchingOtherPlayersGame.TotalHoursPlayed;
+
+        //                OnCalculateGameMetric(i, j, games.Count, thisPlayer, thisPlayersGame);
+        //                j++;
+        //            }
+        //        }
+        //        i++;
+        //    }
+        //}
 
         public IEnumerable<Player> GetFriends(Player player)
         {
