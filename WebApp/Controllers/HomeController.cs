@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using NLog;
 using WebApp.Infrastructure;
 using WebApp.Models;
 
@@ -12,8 +13,13 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
+
+        private Logger _log = LogManager.GetCurrentClassLogger();
+
         public ActionResult Index(string returnUrl)
         {
+            _log.Debug("Index");
+            _log.Debug(new{Message="Index", returnUrl});
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
