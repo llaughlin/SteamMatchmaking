@@ -216,12 +216,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TodoController.cs" />
-    <Compile Include="Controllers\TodoListController.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
-    <Compile Include="Filters\ValidateHttpAntiForgeryTokenAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,16 +225,10 @@
     <Compile Include="Infrastructure\ObjectExtensions.cs" />
     <Compile Include="Infrastructure\SteamMatchmakingContext.cs" />
     <Compile Include="Infrastructure\SteamUserService.cs" />
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameIndex.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\PlayerIndex.cs" />
-    <Compile Include="Models\TodoItemDto.cs" />
-    <Compile Include="Models\TodoListDto.cs" />
-    <Compile Include="Models\TodoList.cs" />
-    <Compile Include="Models\TodoItem.cs" />
-    <Compile Include="Models\TodoItemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -336,13 +325,8 @@
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\TodoList.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\app\ajaxlogin.js" />
-    <Content Include="Scripts\app\todo.viewmodel.js" />
-    <Content Include="Scripts\app\todo.bindings.js" />
-    <Content Include="Scripts\app\todo.datacontext.js" />
-    <Content Include="Scripts\app\todo.model.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -357,23 +341,15 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_UserSettings.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_Login.cshtml" />
-    <Content Include="Views\Home\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
