@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NLog;
@@ -69,14 +68,14 @@ namespace WebApp.Controllers
             Console.WriteLine("Filling in player info...");
             var playerCount = context.Players.Count();
             steamService.OnFillPlayerInfo += ((index, p) =>
-                                              Console.WriteLine("Filling in {0} of {1}: {2}", index, playerCount, p.DisplayName()));
+                                              Console.WriteLine("Filling in {0} of {1}: {2}", index, playerCount, p.DisplayName));
             steamService.FillInPlayerInfo(context.Players.ToList(), true);
 
             context.SaveChanges();
             Console.WriteLine("Done");
 
             steamService.OnCalculatePlayerMetric += (index, player) =>
-                                                    Console.WriteLine("Calculating player {0} of {1}: {2}", index, playerCount, player.DisplayName());
+                                                    Console.WriteLine("Calculating player {0} of {1}: {2}", index, playerCount, player.DisplayName);
 
             steamService.OnCalculateGameMetric += (playerIndex, gameIndex, gameCount, player, game) =>
                                                   Console.WriteLine("Calculating... Player {0} of {1} :{2}, Game {3} of {4}: {5}",
@@ -100,31 +99,6 @@ namespace WebApp.Controllers
                             Games = context.Games.ToList(),
                             Randings = context.Rankings.ToList()
                         });
-        }
-
-    }
-
-    public static class Functions
-    {
-        public static string DownloadString(string url)
-        {
-            try
-            {
-                return new WebClient().DownloadString(url);
-            }
-            catch (WebException ex)
-            {
-                if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
-                {
-                    return null;
-                }
-                throw;
-            }
-        }
-
-        public static string DisplayName(this Player player)
-        {
-            return string.Format("{0} ({1})", player.Name, player.RealName);
         }
 
     }

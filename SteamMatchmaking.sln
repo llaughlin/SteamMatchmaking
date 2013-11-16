@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamMatchmaking", "SteamMatchmaking\SteamMatchmaking.csproj", "{70F3506D-519A-4F4E-B222-017338A9B4B2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{45344074-ACC2-405C-A2BB-3C9D1F90D347}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Tests", "WebApp.Tests\WebApp.Tests.csproj", "{A9E4A4F1-970E-49CE-9952-F20ADD89CEB4}"
@@ -24,16 +22,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{70F3506D-519A-4F4E-B222-017338A9B4B2}.Release|x86.ActiveCfg = Release|Any CPU
 		{45344074-ACC2-405C-A2BB-3C9D1F90D347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45344074-ACC2-405C-A2BB-3C9D1F90D347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45344074-ACC2-405C-A2BB-3C9D1F90D347}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

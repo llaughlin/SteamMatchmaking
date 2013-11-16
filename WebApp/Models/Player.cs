@@ -9,6 +9,11 @@ namespace WebApp.Models
         public long SteamId { get; set; }
         public string Name { get; set; }
         public string RealName { get; set; }
+        public string DisplayName
+        {
+            get { return string.Format("{0} ({1})", Name, RealName); }
+        }
+
         public virtual ICollection<Player> Friends { get; set; }
         public virtual ICollection<Game> Games { get; set; }
         public virtual ICollection<PlayerIndex> PlayerIndices { get; set; }

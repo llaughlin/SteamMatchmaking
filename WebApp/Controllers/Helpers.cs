@@ -1,9 +1,8 @@
 ﻿using System.Net;
-using SteamMatchmaking.Models;
 
-namespace SteamMatchmaking
+namespace WebApp.Controllers
 {
-    public static class Functions
+    public static class Helpers
     {
         public static string DownloadString(string url)
         {
@@ -20,11 +19,5 @@ namespace SteamMatchmaking
                 throw;
             }
         }
-
-        public static string DisplayName(this Player player)
-        {
-            return string.Format("{0} ({1})", player.Name, player.RealName);
-        }
-
     }
 }

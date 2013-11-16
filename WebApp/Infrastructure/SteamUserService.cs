@@ -44,7 +44,7 @@ namespace WebApp.Infrastructure
         public IEnumerable<Game> GetGames(long steamId)
         {
             var url = String.Format(PlayerGamesQuery, steamId);
-            var result = Functions.DownloadString(url).ToXDoc();
+            var result = Helpers.DownloadString(url).ToXDoc();
             var games = result.XPathSelectElements("//game");
             return games.Select(node => new Game
                                             {
@@ -65,7 +65,7 @@ namespace WebApp.Infrastructure
 
             var playerIdList = String.Join(",", players.Select(p => p.SteamId));
             var url = String.Format(PlayerSummariesQuery, ApiKey, playerIdList);
-            var result = Functions.DownloadString(url).ToXDoc();
+            var result = Helpers.DownloadString(url).ToXDoc();
             var xPlayers = result.XPathSelectElements("//player").ToList();
             int index = 0;
             Action<XElement> action = xPlayer =>
@@ -184,7 +184,7 @@ namespace WebApp.Infrastructure
         public IEnumerable<Player> GetFriends(long steamId)
         {
             var url = String.Format(FriendListQuery, ApiKey, steamId);
-            var result = Functions.DownloadString(url);
+            var result = Helpers.DownloadString(url);
             var friends = result.ToXDoc().XPathSelectElements("//friend");
             return friends.Select(node => new Player { SteamId = node.ElementValue("steamid").To<long>() });
         }
@@ -192,7 +192,7 @@ namespace WebApp.Infrastructure
         public IEnumerable<Player> GetPlayersFromGroup(long groupId)
         {
             var url = String.Format(GroupQuery, groupId);
-            var result = Functions.DownloadString(url).ToXDoc();
+            var result = Helpers.DownloadString(url).ToXDoc();
 
             var xPlayers = result.XPathSelectElements("//steamID64");
 
